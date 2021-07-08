@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 
 const headerRoutes = require('./Routes/Header')
 const doubleSectionRoutes = require('./Routes/DoubleSection')
+const freeSectionRoutes = require('./Routes/Free')
 
 const app = express()
 app.use(express.json())
@@ -17,6 +18,7 @@ mongoose.connect(url, { useNewUrlParser: true ,useUnifiedTopology: true})
 
 app.use('/header', headerRoutes)
 app.use('/doubleSection', doubleSectionRoutes)
+app.use('/free', freeSectionRoutes)
 
 app.listen(5000, () => {
     console.log('app listening from 5000')
